@@ -13,17 +13,15 @@ fn day_of_christmas(day: &str, mut index: usize) {
 
     // if it's the first day, print alternate partridge line
     if day == "first" {
-        println!("A partridge in a pear tree.");
+        println!("A partridge in a pear tree.\n");
     }
     // otherwise, run algorithm normally
     else {
         while index > 0 {
-            println!("{}", GIFTS[index]);
+            println!("{},", GIFTS[index]);
             index -= 1;
         }
-        if index == 0 {
-            println!("{}", GIFTS[index]);
-        }
+        if index == 0 { println!("{}.\n", GIFTS[index]); }
     }
 
 }
