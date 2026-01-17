@@ -26,7 +26,7 @@
 // create a variable
 pub fn double_v1(n: i32) -> i32 {
     let double_n: i32 = 2 * n;
-    double_n 
+    double_n
 }
 
 // direct return since immut n is not being modified; mutability not needed
@@ -54,7 +54,7 @@ fn test_double_v2() {
     assert_eq!(double_v2(&2), 4);
     assert_eq!(double_v2(&-3), -6);
     assert_eq!(double_v2(&0), 0);
- }
+}
 #[test]
 fn test_double_v3() {
     assert_eq!(double_v2(&2), 4);
@@ -69,11 +69,25 @@ fn test_double_v3() {
     largest m such that m * m <= n. For a 'harder' version, try to do it more
     efficiently than trying every possibility.
 */
+
+// short on time, just try every possibility
 pub fn sqrt(n: usize) -> usize {
-    unimplemented!()
+    let mut m: usize = 0;
+    while m * m <= n {
+        m += 1;
+    }
+    m - 1
 }
 
 // Remember to write unit tests here (and on all future functions)
+#[test]
+fn test_sqrt() {
+    assert_eq!(sqrt(0), 0);
+    assert_eq!(sqrt(1), 1);
+    assert_eq!(sqrt(99), 9);
+    assert_eq!(sqrt(200), 14);
+    assert_eq!(sqrt(144), 12);
+}
 
 /*
     Problem 3: Slice sum
@@ -87,11 +101,11 @@ pub fn sqrt(n: usize) -> usize {
     Which of the two ways do you prefer?
 */
 pub fn sum_v1(slice: &[i32]) -> i32 {
-    // do some initialization...
+    let mut sum: i32 = 0;
     for &v in slice {
-        // ...
+        sum = sum + v;
     }
-    unimplemented!()
+    sum
 }
 
 pub fn sum_v2(slice: &[i32]) -> i32 {
