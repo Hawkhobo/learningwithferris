@@ -1,4 +1,4 @@
-//  all methods in this crated have worst case O(m * n) searech complexity; m is size of regex, n
+//  I believe all methods in this crate have worst case O(m * n) search complexity; m is size of regex, n
 //  is size of string to search. Not ideal?
 use regex::Regex;
 
